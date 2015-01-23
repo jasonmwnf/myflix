@@ -2,4 +2,10 @@
   .container
     .row
       %div{:class => "video_large_cover col-sm-7 col-sm-offset-1"}
-        = image_tag ""
+        = image_tag "#{@video.large_cover_url}"
+      %div{:class => "video_info col-sm-3"}
+        %header
+          %h3= @video.title
+          %span Rating: 4.5/5.0
+        %p= @video.description
+
