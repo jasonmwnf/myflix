@@ -1,7 +1,7 @@
 - @categories.each do |cat|
   %article.video_category
     %header
-      %h3= cat.name
+      %h3= link_to cat.name, cat
       %br
       .videos.row
         - cat.videos.each do |vid|
