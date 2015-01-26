@@ -13,7 +13,7 @@ describe Video do
     expect(video.category).to eq(cat)
   end
 
-  it "does not save a video without a title or description" do
+  it "does not save without a title or description" do
     video1 = Video.create(description: "video description")
     video2 = Video.create(title: "video title")
     expect(Video.count).to eq(0)
