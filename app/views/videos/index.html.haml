@@ -4,6 +4,6 @@
       %h3= link_to cat.name, cat
       %br
       .videos.row
-        - cat.videos.each do |vid|
+        - cat.recent_videos.each do |vid|
           .video.col-sm-2
             = link_to image_tag(vid.small_cover_url), vid
