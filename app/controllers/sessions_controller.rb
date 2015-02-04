@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.where(email: params[:email]).first
+    user = User.where(email: params[:email]).first #can use find_by in Rails 4
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:info] = "You are signed in, enjoy!"
