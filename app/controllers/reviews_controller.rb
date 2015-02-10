@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :require_user
-  
+  #git test
   def create
     @video = Video.find(params[:video_id])
     review = Review.new(review_params)
