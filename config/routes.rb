@@ -14,7 +14,7 @@ Myflix::Application.routes.draw do
   get 'forgot_password_confirmation', to: 'forgot_passwords#confirm'
   resources :forgot_passwords, only: [:create]
 
-  resources :password_resets, only: [:show]
+  resources :password_resets, only: [:show, :create]
   get 'expired_token', to: 'password_resets#expired_token'
   
   resources :videos, only: [:show] do 
