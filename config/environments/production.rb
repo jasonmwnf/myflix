@@ -17,4 +17,14 @@ Myflix::Application.configure do
   config.i18n.fallbacks = true
 
   config.active_support.deprecation = :notify
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              ENV['MAILGUN_ADDRESS'],
+    port:                 ENV['MAILGUN_PORT'],
+    domain:               'blooming-peak-9541.heroku.com',
+    user_name:            ENV['MAILGUN_LOGIN'],
+    password:             ENV['MAILGUN_PASSWORD'],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 end
