@@ -18,7 +18,7 @@ class AppMailer < ActionMailer::Base
 
     def admin_or_user(email)
       if Rails.env.staging?
-        ENV['ADMIN_EMAIL']
+        jasonmw_nf@hotmail.com
       else
         email
       end
