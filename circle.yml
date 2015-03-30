@@ -5,15 +5,15 @@ deployment:
   production:
     branch: master
     commands:
-      - heroku maintenance:on --app blooming-peak-9541.heroku.com
-      - heroku pg:backups capture --app blooming-peak-9541.heroku.com
-      - git push git@heroku.com:blooming-peak-9541.heroku.com.git $CIRCLE_SHA1:refs/heads/master
-      - heroku run rake db:migrate --app blooming-peak-9541.heroku.com
-      - heroku maintenance:off --app blooming-peak-9541.heroku.com
+      - heroku maintenance:on --app blooming-peak-9541.herokuapp.com
+      - heroku pg:backups capture --app blooming-peak-9541.herokuapp.com
+      - git push git@heroku.com:blooming-peak-9541.herokuapp.com.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app blooming-peak-9541.herokuapp.com
+      - heroku maintenance:off --app blooming-peak-9541.herokuapp.com
   staging:
     branch: staging
     commands:
-      - heroku maintenance:on --app staging-blooming-peak-9541.heroku.com
-      - git push git@heroku.com:staging-blooming-peak-9541.heroku.com.git $CIRCLE_SHA1:refs/heads/master
-      - heroku run rake db:migrate --app staging-blooming-peak-9541.heroku.com
-      - heroku maintenance:off --app staging-blooming-peak-9541.heroku.com
+      - heroku maintenance:on --app staging-blooming-peak-9541.herokuapp.com
+      - git push git@heroku.com:staging-blooming-peak-9541.herokuapp.com.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app staging-blooming-peak-9541.herokuapp.com
+      - heroku maintenance:off --app staging-blooming-peak-9541.herokuapp.com
