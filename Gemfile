@@ -15,6 +15,7 @@ gem 'fabrication'
 gem 'faker'
 gem 'sidekiq'
 gem 'unicorn'
+gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
 group :development do
   gem 'thin'
