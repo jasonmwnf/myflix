@@ -18,12 +18,12 @@ Myflix::Application.configure do
 
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { host: 'staging-blooming-peak-9541.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'blooming-peak-9541.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              ENV['MAILGUN_ADDRESS'],
     port:                 ENV['MAILGUN_PORT'],
-    domain:               'staging-blooming-peak-9541.herokuapp.com',
+    domain:               'blooming-peak-9541.herokuapp.com',
     user_name:            ENV['MAILGUN_LOGIN'],
     password:             ENV['MAILGUN_PASSWORD'],
     authentication:       'plain',
