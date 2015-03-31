@@ -16,6 +16,8 @@ gem 'faker'
 gem 'sidekiq'
 gem 'unicorn'
 gem 'figaro'
+gem 'carrierwave'
+gem 'mini_magick'
 gem "sentry-raven", :git => "https://github.com/getsentry/raven-ruby.git"
 
 group :development do
