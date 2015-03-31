@@ -10,6 +10,10 @@ Myflix::Application.routes.draw do
   get 'sign_out', to: "sessions#destroy"
   get 'my_queue', to: 'queue_items#index'
   get 'people', to: 'relationships#index'
+
+  namespace :admin do 
+    resources :videos, only: [:new, :create]
+  end 
   
   get 'forgot_password', to: 'forgot_passwords#new'
   get 'forgot_password_confirmation', to: 'forgot_passwords#confirm'
