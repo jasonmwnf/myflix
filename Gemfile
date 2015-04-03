@@ -16,6 +16,7 @@ gem 'faker'
 gem 'sidekiq'
 gem 'unicorn'
 gem 'figaro'
+gem 'stripe'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "fog"
