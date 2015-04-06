@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       handle_invitation
       Stripe.api_key = ENV['STRIPE_SECRET_KEY']
@@ -22,6 +21,8 @@ class UsersController < ApplicationController
       rescue Stripe::CardError => e
         # The card has been declined
       end
+
+
       AppMailer.send_welcome_email(@user).deliver
       redirect_to sign_in_path
     else

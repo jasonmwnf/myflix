@@ -40,6 +40,8 @@ group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'capybara-email', github: 'dockyard/capybara-email'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :production, :staging do
