@@ -11,6 +11,7 @@ describe UsersController do
   describe "POST create" do 
     context "with valid input" do
       before do 
+        StripeWrapper::Charge.stub(:create)
         post :create, user: Fabricate.attributes_for(:user) 
       end 
 
@@ -61,7 +62,10 @@ describe UsersController do
 
     context "sending emails" do 
 
-      before { ActionMailer::Base.deliveries.clear }
+      before do
+        ActionMailer::Base.deliveries.clear 
+        StripeWrapper::Charge.stub(:create)
+      end
 
       it "sends out email to the user with valid inputs" do 
         post :create, user: { email: "joe@example.com", password: "password", username: "Joe Smith" }
