@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=cad&source=tok_15oxwgDOCi1ehaTMuGeepeqb&description=Sign%20up%20charge%20for%20john%40example.com
+      string: source=tok_15phCwDOCi1ehaTMJ7YekAZS&email=john%40example.com&plan=myflixbase
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -19,10 +19,10 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.20.4","lang":"ruby","lang_version":"2.1.5 p273 (2014-11-13)","platform":"i686-linux","publisher":"stripe","uname":"Linux
-        jason-Aspire-X1300 3.16.0-33-generic #44-Ubuntu SMP Thu Mar 12 12:25:57 UTC
+        jason-Aspire-X1300 3.16.0-34-generic #45-Ubuntu SMP Mon Mar 23 17:27:54 UTC
         2015 i686 athlon i686 GNU/Linux"}'
       Content-Length:
-      - '117'
+      - '76'
   response:
     status:
       code: 402
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 07 Apr 2015 14:44:55 GMT
+      - Thu, 09 Apr 2015 15:04:43 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '162'
+      - '134'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_v7rOurWmDaekYCOY
+      - req_Ew6kloNffGLQxf8L
       Stripe-Version:
       - '2015-03-24'
     body:
@@ -59,10 +59,10 @@ http_interactions:
           "error": {
             "message": "Your card was declined.",
             "type": "card_error",
-            "code": "card_declined",
-            "charge": "ch_15oxwhDOCi1ehaTM5xWQG5co"
+            "param": "",
+            "code": "card_declined"
           }
         }
     http_version: 
-  recorded_at: Tue, 07 Apr 2015 14:44:46 GMT
+  recorded_at: Thu, 09 Apr 2015 15:04:43 GMT
 recorded_with: VCR 2.9.3

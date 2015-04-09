@@ -19,7 +19,7 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.20.4","lang":"ruby","lang_version":"2.1.5 p273 (2014-11-13)","platform":"i686-linux","publisher":"stripe","uname":"Linux
-        jason-Aspire-X1300 3.16.0-33-generic #44-Ubuntu SMP Thu Mar 12 12:25:57 UTC
+        jason-Aspire-X1300 3.16.0-34-generic #45-Ubuntu SMP Mon Mar 23 17:27:54 UTC
         2015 i686 athlon i686 GNU/Linux"}'
       Content-Length:
       - '81'
@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 06 Apr 2015 18:09:18 GMT
+      - Thu, 09 Apr 2015 15:03:30 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_miZxEpk36Oft9QGx
+      - req_TbdglLuziaFyd9nS
       Stripe-Version:
       - '2015-03-24'
       Strict-Transport-Security:
@@ -58,14 +58,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_15oeewDOCi1ehaTMX3Z4XZ1W",
+          "id": "tok_15phBmDOCi1ehaTMrcLwY5KM",
           "livemode": false,
-          "created": 1428343758,
+          "created": 1428591810,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_15oeewDOCi1ehaTMWfWqeBfk",
+            "id": "card_15phBmDOCi1ehaTM7Xlb9QSz",
             "object": "card",
             "last4": "4242",
             "brand": "Visa",
@@ -89,13 +89,13 @@ http_interactions:
           "client_ip": "156.57.64.21"
         }
     http_version: 
-  recorded_at: Mon, 06 Apr 2015 18:09:09 GMT
+  recorded_at: Thu, 09 Apr 2015 15:03:30 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=cad&source=tok_15oeewDOCi1ehaTMX3Z4XZ1W&description=a%20valid%20charge
+      string: amount=999&currency=cad&source=tok_15phBmDOCi1ehaTMrcLwY5KM&description=a%20valid%20charge
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -109,7 +109,7 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.20.4","lang":"ruby","lang_version":"2.1.5 p273 (2014-11-13)","platform":"i686-linux","publisher":"stripe","uname":"Linux
-        jason-Aspire-X1300 3.16.0-33-generic #44-Ubuntu SMP Thu Mar 12 12:25:57 UTC
+        jason-Aspire-X1300 3.16.0-34-generic #45-Ubuntu SMP Mon Mar 23 17:27:54 UTC
         2015 i686 athlon i686 GNU/Linux"}'
       Content-Length:
       - '90'
@@ -121,7 +121,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 06 Apr 2015 18:09:19 GMT
+      - Thu, 09 Apr 2015 15:03:31 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -139,7 +139,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_QH6YbOJaRy7Mx5QO
+      - req_elxe01AxrXrgiFCR
       Stripe-Version:
       - '2015-03-24'
       Strict-Transport-Security:
@@ -148,9 +148,9 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_15oeexDOCi1ehaTMtOhJlwlY",
+          "id": "ch_15phBnDOCi1ehaTMav1NeMsm",
           "object": "charge",
-          "created": 1428343759,
+          "created": 1428591811,
           "livemode": false,
           "paid": true,
           "status": "succeeded",
@@ -158,7 +158,7 @@ http_interactions:
           "currency": "cad",
           "refunded": false,
           "source": {
-            "id": "card_15oeewDOCi1ehaTMWfWqeBfk",
+            "id": "card_15phBmDOCi1ehaTM7Xlb9QSz",
             "object": "card",
             "last4": "4242",
             "brand": "Visa",
@@ -182,7 +182,7 @@ http_interactions:
             "customer": null
           },
           "captured": true,
-          "balance_transaction": "txn_15oeexDOCi1ehaTMHevklbB0",
+          "balance_transaction": "txn_15phBnDOCi1ehaTMByEc2R8a",
           "failure_message": null,
           "failure_code": null,
           "amount_refunded": 0,
@@ -201,10 +201,10 @@ http_interactions:
             "object": "list",
             "total_count": 0,
             "has_more": false,
-            "url": "/v1/charges/ch_15oeexDOCi1ehaTMtOhJlwlY/refunds",
+            "url": "/v1/charges/ch_15phBnDOCi1ehaTMav1NeMsm/refunds",
             "data": []
           }
         }
     http_version: 
-  recorded_at: Mon, 06 Apr 2015 18:09:10 GMT
+  recorded_at: Thu, 09 Apr 2015 15:03:31 GMT
 recorded_with: VCR 2.9.3

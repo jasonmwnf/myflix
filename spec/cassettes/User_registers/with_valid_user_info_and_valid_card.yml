@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=cad&source=tok_15oxbSDOCi1ehaTMB0j8f4Ap&description=Sign%20up%20charge%20for%20john%40example.com
+      string: source=tok_15phDFDOCi1ehaTMa6UbfRjW&email=john%40example.com&plan=myflixbase
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -19,10 +19,10 @@ http_interactions:
       - application/x-www-form-urlencoded
       X-Stripe-Client-User-Agent:
       - '{"bindings_version":"1.20.4","lang":"ruby","lang_version":"2.1.5 p273 (2014-11-13)","platform":"i686-linux","publisher":"stripe","uname":"Linux
-        jason-Aspire-X1300 3.16.0-33-generic #44-Ubuntu SMP Thu Mar 12 12:25:57 UTC
+        jason-Aspire-X1300 3.16.0-34-generic #45-Ubuntu SMP Mon Mar 23 17:27:54 UTC
         2015 i686 athlon i686 GNU/Linux"}'
       Content-Length:
-      - '117'
+      - '76'
   response:
     status:
       code: 200
@@ -31,11 +31,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Tue, 07 Apr 2015 14:22:59 GMT
+      - Thu, 09 Apr 2015 15:05:02 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '1400'
+      - '2307'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_6A9ivChT8wCIHGmi
+      - req_Cmozz9TP6VT1pi0c
       Stripe-Version:
       - '2015-03-24'
       Strict-Transport-Security:
@@ -58,63 +58,92 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_15oxbTDOCi1ehaTMzdFASDLd",
-          "object": "charge",
-          "created": 1428416579,
+          "object": "customer",
+          "created": 1428591902,
+          "id": "cus_61kigQGZNiHISF",
           "livemode": false,
-          "paid": true,
-          "status": "succeeded",
-          "amount": 999,
-          "currency": "cad",
-          "refunded": false,
-          "source": {
-            "id": "card_15oxbSDOCi1ehaTMfP23Eo6b",
-            "object": "card",
-            "last4": "4242",
-            "brand": "Visa",
-            "funding": "credit",
-            "exp_month": 7,
-            "exp_year": 2018,
-            "fingerprint": "H26dOohpCTeoD8lr",
-            "country": "US",
-            "name": null,
-            "address_line1": null,
-            "address_line2": null,
-            "address_city": null,
-            "address_state": null,
-            "address_zip": null,
-            "address_country": null,
-            "cvc_check": "pass",
-            "address_line1_check": null,
-            "address_zip_check": null,
-            "dynamic_last4": null,
-            "metadata": {},
-            "customer": null
-          },
-          "captured": true,
-          "balance_transaction": "txn_15oxbTDOCi1ehaTM0XQw2KLk",
-          "failure_message": null,
-          "failure_code": null,
-          "amount_refunded": 0,
-          "customer": null,
-          "invoice": null,
-          "description": "Sign up charge for john@example.com",
-          "dispute": null,
+          "description": null,
+          "email": "john@example.com",
+          "delinquent": false,
           "metadata": {},
-          "statement_descriptor": null,
-          "fraud_details": {},
-          "receipt_email": null,
-          "receipt_number": null,
-          "shipping": null,
-          "application_fee": null,
-          "refunds": {
+          "subscriptions": {
             "object": "list",
-            "total_count": 0,
+            "total_count": 1,
             "has_more": false,
-            "url": "/v1/charges/ch_15oxbTDOCi1ehaTMzdFASDLd/refunds",
-            "data": []
-          }
+            "url": "/v1/customers/cus_61kigQGZNiHISF/subscriptions",
+            "data": [
+              {
+                "id": "sub_61kimaSwHgwnoG",
+                "plan": {
+                  "interval": "month",
+                  "name": "the base plan",
+                  "created": 1428585985,
+                  "amount": 999,
+                  "currency": "cad",
+                  "id": "myflixbase",
+                  "object": "plan",
+                  "livemode": false,
+                  "interval_count": 1,
+                  "trial_period_days": null,
+                  "metadata": {},
+                  "statement_descriptor": null
+                },
+                "object": "subscription",
+                "start": 1428591902,
+                "status": "active",
+                "customer": "cus_61kigQGZNiHISF",
+                "cancel_at_period_end": false,
+                "current_period_start": 1428591902,
+                "current_period_end": 1431183902,
+                "ended_at": null,
+                "trial_start": null,
+                "trial_end": null,
+                "canceled_at": null,
+                "quantity": 1,
+                "application_fee_percent": null,
+                "discount": null,
+                "tax_percent": null,
+                "metadata": {}
+              }
+            ]
+          },
+          "discount": null,
+          "account_balance": 0,
+          "currency": "cad",
+          "sources": {
+            "object": "list",
+            "total_count": 1,
+            "has_more": false,
+            "url": "/v1/customers/cus_61kigQGZNiHISF/sources",
+            "data": [
+              {
+                "id": "card_15phDFDOCi1ehaTMbMXklxvY",
+                "object": "card",
+                "last4": "4242",
+                "brand": "Visa",
+                "funding": "credit",
+                "exp_month": 7,
+                "exp_year": 2018,
+                "fingerprint": "H26dOohpCTeoD8lr",
+                "country": "US",
+                "name": null,
+                "address_line1": null,
+                "address_line2": null,
+                "address_city": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_country": null,
+                "cvc_check": "pass",
+                "address_line1_check": null,
+                "address_zip_check": null,
+                "dynamic_last4": null,
+                "metadata": {},
+                "customer": "cus_61kigQGZNiHISF"
+              }
+            ]
+          },
+          "default_source": "card_15phDFDOCi1ehaTMbMXklxvY"
         }
     http_version: 
-  recorded_at: Tue, 07 Apr 2015 14:22:50 GMT
+  recorded_at: Thu, 09 Apr 2015 15:05:02 GMT
 recorded_with: VCR 2.9.3

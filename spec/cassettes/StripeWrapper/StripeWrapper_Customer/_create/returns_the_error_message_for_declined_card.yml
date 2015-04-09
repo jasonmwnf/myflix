@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 09 Apr 2015 15:03:28 GMT
+      - Thu, 09 Apr 2015 15:03:20 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_wNnUkGwi9ERb5O8T
+      - req_0XZQyXtLX9PmzHGf
       Stripe-Version:
       - '2015-03-24'
       Strict-Transport-Security:
@@ -58,14 +58,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_15phBkDOCi1ehaTMv6WVsIzn",
+          "id": "tok_15phBcDOCi1ehaTM3BQzTtVK",
           "livemode": false,
-          "created": 1428591808,
+          "created": 1428591800,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_15phBkDOCi1ehaTMYUbzwKs2",
+            "id": "card_15phBcDOCi1ehaTM9sKTVskq",
             "object": "card",
             "last4": "0002",
             "brand": "Visa",
@@ -89,13 +89,13 @@ http_interactions:
           "client_ip": "156.57.64.21"
         }
     http_version: 
-  recorded_at: Thu, 09 Apr 2015 15:03:28 GMT
+  recorded_at: Thu, 09 Apr 2015 15:03:20 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=cad&source=tok_15phBkDOCi1ehaTMv6WVsIzn&description=an%20invalid%20charge
+      string: source=tok_15phBcDOCi1ehaTM3BQzTtVK&email=mariano_vonrueden%40spinkaupton.com&plan=myflixbase
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -121,11 +121,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Thu, 09 Apr 2015 15:03:29 GMT
+      - Thu, 09 Apr 2015 15:03:21 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '162'
+      - '134'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -139,7 +139,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_H7jXgaAYVNnDd5Zj
+      - req_eZnJ7LPF9Qula0sc
       Stripe-Version:
       - '2015-03-24'
     body:
@@ -149,10 +149,10 @@ http_interactions:
           "error": {
             "message": "Your card was declined.",
             "type": "card_error",
-            "code": "card_declined",
-            "charge": "ch_15phBlDOCi1ehaTMjaXK0TUI"
+            "param": "",
+            "code": "card_declined"
           }
         }
     http_version: 
-  recorded_at: Thu, 09 Apr 2015 15:03:29 GMT
+  recorded_at: Thu, 09 Apr 2015 15:03:21 GMT
 recorded_with: VCR 2.9.3
