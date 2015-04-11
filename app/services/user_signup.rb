@@ -14,6 +14,7 @@ class UserSignup
         :source => token,
       )
       if customer.successful?
+        @user.customer_token = customer.customer_token
         @user.save
         handle_invitation(invitation_token)
         AppMailer.send_welcome_email(@user).deliver

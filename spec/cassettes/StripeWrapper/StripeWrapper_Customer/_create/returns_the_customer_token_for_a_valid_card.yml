@@ -1,0 +1,239 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/tokens
+    body:
+      encoding: US-ASCII
+      string: card[number]=4242424242424242&card[exp_month]=6&card[exp_year]=2018&card[cvc]=314
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.20.4
+      Authorization:
+      - Bearer sk_test_VqQNTdaBK8zAQt7MabYVgkL2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.20.4","lang":"ruby","lang_version":"2.1.5 p273 (2014-11-13)","platform":"i686-linux","publisher":"stripe","uname":"Linux
+        jason-Aspire-X1300 3.16.0-34-generic #45-Ubuntu SMP Mon Mar 23 17:27:54 UTC
+        2015 i686 athlon i686 GNU/Linux"}'
+      Content-Length:
+      - '81'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 11 Apr 2015 17:08:02 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '726'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_ML9dadniPEMazwSP
+      Stripe-Version:
+      - '2015-03-24'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "tok_15qS5ODOCi1ehaTMR5ScFhi8",
+          "livemode": false,
+          "created": 1428772082,
+          "used": false,
+          "object": "token",
+          "type": "card",
+          "card": {
+            "id": "card_15qS5ODOCi1ehaTMPTACkUmK",
+            "object": "card",
+            "last4": "4242",
+            "brand": "Visa",
+            "funding": "credit",
+            "exp_month": 6,
+            "exp_year": 2018,
+            "fingerprint": "H26dOohpCTeoD8lr",
+            "country": "US",
+            "name": null,
+            "address_line1": null,
+            "address_line2": null,
+            "address_city": null,
+            "address_state": null,
+            "address_zip": null,
+            "address_country": null,
+            "cvc_check": "unchecked",
+            "address_line1_check": null,
+            "address_zip_check": null,
+            "dynamic_last4": null
+          },
+          "client_ip": "156.57.64.21"
+        }
+    http_version: 
+  recorded_at: Sat, 11 Apr 2015 17:08:00 GMT
+- request:
+    method: post
+    uri: https://api.stripe.com/v1/customers
+    body:
+      encoding: US-ASCII
+      string: source=tok_15qS5ODOCi1ehaTMR5ScFhi8&email=allene%40schultzdaniel.info&plan=myflixbase
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Stripe/v1 RubyBindings/1.20.4
+      Authorization:
+      - Bearer sk_test_VqQNTdaBK8zAQt7MabYVgkL2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      X-Stripe-Client-User-Agent:
+      - '{"bindings_version":"1.20.4","lang":"ruby","lang_version":"2.1.5 p273 (2014-11-13)","platform":"i686-linux","publisher":"stripe","uname":"Linux
+        jason-Aspire-X1300 3.16.0-34-generic #45-Ubuntu SMP Mon Mar 23 17:27:54 UTC
+        2015 i686 athlon i686 GNU/Linux"}'
+      Content-Length:
+      - '85'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 11 Apr 2015 17:08:03 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2316'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Methods:
+      - GET, POST, HEAD, OPTIONS, DELETE
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '300'
+      Cache-Control:
+      - no-cache, no-store
+      Request-Id:
+      - req_u4nX0Mo3mSNrVPyu
+      Stripe-Version:
+      - '2015-03-24'
+      Strict-Transport-Security:
+      - max-age=31556926; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "object": "customer",
+          "created": 1428772082,
+          "id": "cus_62X9MNVNJqluxq",
+          "livemode": false,
+          "description": null,
+          "email": "allene@schultzdaniel.info",
+          "delinquent": false,
+          "metadata": {},
+          "subscriptions": {
+            "object": "list",
+            "total_count": 1,
+            "has_more": false,
+            "url": "/v1/customers/cus_62X9MNVNJqluxq/subscriptions",
+            "data": [
+              {
+                "id": "sub_62X914B4fkmErt",
+                "plan": {
+                  "interval": "month",
+                  "name": "the base plan",
+                  "created": 1428585985,
+                  "amount": 999,
+                  "currency": "cad",
+                  "id": "myflixbase",
+                  "object": "plan",
+                  "livemode": false,
+                  "interval_count": 1,
+                  "trial_period_days": null,
+                  "metadata": {},
+                  "statement_descriptor": null
+                },
+                "object": "subscription",
+                "start": 1428772082,
+                "status": "active",
+                "customer": "cus_62X9MNVNJqluxq",
+                "cancel_at_period_end": false,
+                "current_period_start": 1428772082,
+                "current_period_end": 1431364082,
+                "ended_at": null,
+                "trial_start": null,
+                "trial_end": null,
+                "canceled_at": null,
+                "quantity": 1,
+                "application_fee_percent": null,
+                "discount": null,
+                "tax_percent": null,
+                "metadata": {}
+              }
+            ]
+          },
+          "discount": null,
+          "account_balance": 0,
+          "currency": "cad",
+          "sources": {
+            "object": "list",
+            "total_count": 1,
+            "has_more": false,
+            "url": "/v1/customers/cus_62X9MNVNJqluxq/sources",
+            "data": [
+              {
+                "id": "card_15qS5ODOCi1ehaTMPTACkUmK",
+                "object": "card",
+                "last4": "4242",
+                "brand": "Visa",
+                "funding": "credit",
+                "exp_month": 6,
+                "exp_year": 2018,
+                "fingerprint": "H26dOohpCTeoD8lr",
+                "country": "US",
+                "name": null,
+                "address_line1": null,
+                "address_line2": null,
+                "address_city": null,
+                "address_state": null,
+                "address_zip": null,
+                "address_country": null,
+                "cvc_check": "pass",
+                "address_line1_check": null,
+                "address_zip_check": null,
+                "dynamic_last4": null,
+                "metadata": {},
+                "customer": "cus_62X9MNVNJqluxq"
+              }
+            ]
+          },
+          "default_source": "card_15qS5ODOCi1ehaTMPTACkUmK"
+        }
+    http_version: 
+  recorded_at: Sat, 11 Apr 2015 17:08:01 GMT
+recorded_with: VCR 2.9.3
