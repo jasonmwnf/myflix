@@ -17,6 +17,7 @@ gem 'sidekiq'
 gem 'unicorn'
 gem 'figaro'
 gem 'stripe'
+gem 'stripe_event'
 gem 'carrierwave'
 gem 'mini_magick'
 gem "fog"
