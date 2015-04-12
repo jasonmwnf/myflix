@@ -6,9 +6,14 @@ class SessionsController < ApplicationController
   def create
     user = User.where(email: params[:email]).first #can use find_by in Rails 4
     if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      flash[:warning] = "You are signed in, enjoy!"
-      redirect_to home_path
+      if user.active?
+        session[:user_id] = user.id
+        flash[:warning] = "You are signed in, enjoy!"
+        redirect_to home_path
+      else
+        flash[:danger] = "Your account has been suspended, please contact customer service."
+        redirect_to sign_in_path
+      end
     else
       flash[:danger] = "Invalid email or password."
       redirect_to sign_in_path

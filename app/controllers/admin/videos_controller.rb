@@ -1,7 +1,6 @@
 class Admin::VideosController < AdminsController
   before_action :require_user
   
-
   def new
     @video = Video.new
   end
