@@ -1,4 +1,4 @@
-<h1>Myflix - A NetFlix clone built from scratch</h1>
+%h1Myflix - A NetFlix clone built from scratch
 
 An app created using the processes, workflows and best practices of experienced developers. This app is a non-trivial e-commerce application, a clone of NetFlix, with full payment processing, account management, and administration capabilities. Built using Test Driven Development (TDD). This app demonstrates that I can create an app with production-level robustness and manage complexity in a growing codebase. Key concepts:  
 
