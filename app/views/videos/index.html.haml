@@ -1,5 +1,5 @@
-- @categories.each do |cat|
-  %article.video_category
+%article.video_category
+  - @categories.each do |cat|
     %header
       %h3= link_to cat.name, cat
       %br
